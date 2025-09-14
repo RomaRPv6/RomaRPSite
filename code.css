@@ -1,3 +1,27 @@
+/* Box prezzo evidenziato nel negozio */
+.shop-price-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, var(--accent) 60%, #fffbe6 100%);
+  color: #222;
+  border-radius: 12px;
+  padding: .5rem 1.2rem;
+  margin: .5rem auto 1rem auto;
+  min-width: 90px;
+  max-width: 140px;
+  box-shadow: 0 2px 12px 0 rgba(244,196,48,0.13);
+  font-size: 1.13rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+  border: 2px solid color-mix(in oklab, var(--accent) 60%, transparent);
+}
+.shop-price-box .shop-price {
+  color: #222;
+  font-weight: 800;
+  font-size: 1.13rem;
+  letter-spacing: .5px;
+}
 @media (max-width: 600px) {
   .nav .links {
     display: flex !important;
@@ -258,16 +282,19 @@
   text-decoration: none;
 }
 .community-btn.discord { color: var(--accent); }
-.community-btn.instagram { color: #fff; }
-.community-btn.instagram { background: linear-gradient(120deg, #e1306c 0%, #fdc468 100%); border: 1.5px solid #e1306c; }
 .community-btn:hover {
   transform: scale(1.045) rotate(-1deg);
   box-shadow: 0 8px 32px 0 rgba(244,196,48,0.18), 0 2px 12px 0 rgba(0,0,0,0.18);
   background: linear-gradient(120deg, rgba(244,196,48,0.18) 0%, rgba(20,24,38,1) 100%);
   color: #fff;
 }
-.community-btn.instagram:hover {
-  background: linear-gradient(120deg, #fdc468 0%, #e1306c 100%);
+.community-btn.tiktok {
+  color: #fff;
+  background: linear-gradient(120deg, #010101 0%, #25F4EE 60%, #FE2C55 100%);
+  border: 1.5px solid #25F4EE;
+}
+.community-btn.tiktok:hover {
+  background: linear-gradient(120deg, #FE2C55 0%, #25F4EE 100%);
   color: #fff;
 }
 .community-icon {
