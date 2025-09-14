@@ -9,6 +9,7 @@
     scrollbar-width: none;
   }
   .nav .links::-webkit-scrollbar { display: none; }
+  /* ciao*/
   .nav .links a {
     min-width: 44px;
     min-height: 44px;
