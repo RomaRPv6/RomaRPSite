@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROMA RP — ER:LC Roblox RolePlay</title>
+  <meta name="description" content="ROMA RP · Server ER:LC su Roblox · N°1 in Italia. Unisciti su Discord e vivi un'esperienza RolePlay realistica ambientata in Italia." />
+  <!-- Collega il CSS generato: rinomina il file se necessario -->
+  <link rel="stylesheet" href="code.css" />
+  <link rel="icon" type="image/png" href="download.png" />
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="wrap container">
+  <a class="brand" href="#"><img src="download.png" alt="Logo Roma RP" class="logo-small"></a>
+      <nav class="links" aria-label="Primaria">
+        <a href="#home" aria-current="page">Home</a>
+        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="#roleplay">RolePlay</a>
+        <a href="#negozio">Negozio</a>
+        <a href="#contatti" class="cta">Contattaci</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+  <h1><img src="download.png" alt="Logo Roma RP" class="logo-hero"></h1>
+  <p class="subtitle hero-subtitle">Server ER:LC su Roblox · N°1 in Italia • Entra su Discord e inizia la tua carriera nel RolePlay italiano.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://www.roblox.com/it/games/2534724415/Emergency-Response-Liberty-County">Gioca Ora</a>
+        <a class="btn outline" href="www.discord.gg/romarp">Unisciti al Discord</a>
+        <a class="trailer-img-link" href="https://www.tiktok.com/@roma_rrp/video/7456791629735808278" target="_blank" rel="noopener">
+          <img src="roma-rp-v5-trailer.png" alt="Guarda il Trailer ROMA RP V5" class="trailer-img" />
+        </a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="value">5600+</div><div class="label">Membri su Discord</div></div>
+        <div class="stat"><div class="value">39+</div><div class="label">Giocatori Connessi in Media</div></div>
+        <div class="stat" role="region" aria-live="polite">
+          <div class="title">Utenti online su Discord</div>
+          <div style="display: flex; align-items: center; gap: 0.5em;">
+            <span id="online-dot" class="online-dot"></span>
+            <div id="count" class="count">—</div>
+          </div>
+          <div id="last" class="note">ultimo aggiornamento: —</div>
+        </div>
+      </div>
+
+  <script>
+    const GUILD_ID = "1094540619625549845"; // sostituisci con l'ID del tuo server
+    const WIDGET_URL = `https://discord.com/api/guilds/${GUILD_ID}/widget.json`;
+
+    async function updateCount(){
+      try{
+        const res = await fetch(WIDGET_URL, {cache: "no-store"});
+        if(!res.ok) throw new Error("Impossibile raggiungere il widget");
+        const data = await res.json();
+        const online = data.presence_count ?? data.approximate_presence_count ?? (data.members ? data.members.length : null);
+        document.getElementById('count').textContent = (online !== null) ? online : "Non disponibile";
+        document.getElementById('last').textContent = `ultimo aggiornamento: ${new Date().toLocaleTimeString()}`;
+      } catch(err) {
+        document.getElementById('count').textContent = "errore";
+        document.getElementById('last').textContent = `errore: ${err.message}`;
+      }
+    }
+
+    updateCount();
+    setInterval(updateCount, 30000);
+  </script>
+</body>
+    </div>
+  </section>
+
+  <!-- Chi Siamo -->
+  <section id="chi-siamo" class="container chi-siamo-animated">
+    <div class="media-block">
+      <div class="video animate-fadein">
+        <h2 class="m0 chi-title animate-fadein">Chi Siamo</h2>
+        <p class="mt1 chi-desc animate-fadein" style="animation-delay:.08s;">ROMA RP è una community italiana su ER:LC (Roblox) focalizzata su realismo, regole chiare e divertimento. Siamo tra i server più attivi, con eventi settimanali e staff dedicato.</p>
+        <div class="mt2 grid-2 chi-cards">
+          <div class="chi-card animate-fadein" style="animation-delay:.16s;">
+            <span class="chi-icon">🎯</span>
+            <div>
+              <div class="chi-label">La nostra Mission</div>
+              <div class="chi-desc2">Offrire un ambiente immersivo e competitivo nel rispetto del roleplay e dei giocatori.</div>
+            </div>
+          </div>
+          <div class="chi-card animate-fadein" style="animation-delay:.24s;">
+            <span class="chi-icon">🤝</span>
+            <div>
+              <div class="chi-label">Community</div>
+              <div class="chi-desc2">Un server accogliente, moderato e orientato alla crescita dei membri, nuovi e veterani.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="aside join-why">
+        <h3 class="why-title">Perché unirti</h3>
+        <div class="why-cards">
+          <div class="why-card animate-fadein">
+            <span class="why-icon">🎉</span>
+            <div>
+              <div class="why-label">Eventi settimanali</div>
+              <div class="why-desc">e pattuglie strutturate</div>
+            </div>
+          </div>
+          <div class="why-card animate-fadein" style="animation-delay:.12s;">
+            <span class="why-icon">🏆</span>
+            <div>
+              <div class="why-label">Progressione ruoli</div>
+              <div class="why-desc">e gradi personalizzati</div>
+            </div>
+          </div>
+          <div class="why-card animate-fadein" style="animation-delay:.24s;">
+            <span class="why-icon">⚡</span>
+            <div>
+              <div class="why-label">Supporto rapido</div>
+              <div class="why-desc">tramite ticket dedicati</div>
+            </div>
+          </div>
+        </div>
+        <a class="btn primary mt2 animate-scalein" href="#discord">Unisciti ora</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Feature cards (Crescita/Realismo/Divertimento) -->
+  <section class="container">
+    <div class="features features-animated">
+      <div class="feature-card animate-fadein">
+        <span class="feature-icon">📈</span>
+        <div>
+          <div class="feature-label">Crescita Personale</div>
+          <div class="feature-desc">Migliora le tue abilità, avanza di grado e affronta nuove sfide in un ecosistema vivo.</div>
+        </div>
+      </div>
+      <div class="feature-card animate-fadein" style="animation-delay:.12s;">
+        <span class="feature-icon">🏛️</span>
+        <div>
+          <div class="feature-label">Realismo</div>
+          <div class="feature-desc">Regole chiare e ambientazioni ispirate all'Italia per un'immersione totale in ER:LC.</div>
+        </div>
+      </div>
+      <div class="feature-card animate-fadein" style="animation-delay:.24s;">
+        <span class="feature-icon">🎮</span>
+        <div>
+          <div class="feature-label">Divertimento</div>
+          <div class="feature-desc">Socializza, collabora e vivi momenti adrenalinici con una community attiva.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ruoli -->
+  <section id="roleplay" class="container">
+    <h2 class="m0">Scegli il tuo Ruolo</h2>
+    <p class="mt1" style="color:var(--muted)">Tre percorsi, infinite storie. Inizia subito la tua carriera.</p>
+    <div class="roles">
+      <article class="role role-card animate-fadein" style="animation-delay:.04s;">
+        <div class="role-icon">🦹‍♂️</div>
+        <div class="media.criminale"><img src="IMG_9593.jpg" alt="Criminale"></div>
+        <div class="body">
+          <div class="role-label">Criminale</div>
+          <div class="role-desc">Organizza colpi, eludi la legge e lascia il segno nelle strade romane.</div>
+        </div>
+      </article>
+      <article class="role role-card animate-fadein" style="animation-delay:.12s;">
+        <div class="role-icon">👮‍♂️</div>
+        <div class="media.forze"><img src="image.png" alt="Forze dell'Ordine"></div>
+        <div class="body">
+          <div class="role-label">Forze dell'Ordine</div>
+          <div class="role-desc">Difendi i cittadini, mantieni l'ordine e collabora con la tua squadra.</div>
+        </div>
+      </article>
+      <article class="role role-card animate-fadein" style="animation-delay:.20s;">
+        <div class="role-icon">💼</div>
+        <div class="media imprenditore"><img src="ima1ge.png" alt="Imprenditore"></div>
+        <div class="body">
+          <div class="role-label">Imprenditore</div>
+          <div class="role-desc">Avvia attività, gestisci risorse e scala il mercato competitivo della città.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Negozio (placeholder) -->
+  <section id="negozio" class="container">
+    <h2 class="m0">Negozio</h2>
+    <p class="mt1" style="color:var(--muted)">Selezione sicura, facile e soddisfacente.</p>
+    <div class="store mt2">
+      <article class="product shop-card animate-fadein" style="animation-delay:.04s;">
+        <div class="shop-icon">🧒</div>
+        <div class="thumb"></div>
+        <div class="info">
+          <div class="shop-label">Secondo PG Minorenne</div>
+          <div class="shop-price">450 Robux</div>
+          <a class="shop-btn animate-fadein" style="animation-delay:.08s;" href="#">Acquista</a>
+        </div>
+      </article>
+      <article class="product shop-card animate-fadein" style="animation-delay:.12s;">
+        <div class="shop-icon">🧑</div>
+        <div class="thumb"></div>
+        <div class="info">
+          <div class="shop-label">Secondo PG Maggiorenne</div>
+          <div class="shop-price">800 Robux</div>
+          <a class="shop-btn animate-fadein" style="animation-delay:.16s;" href="#">Acquista</a>
+        </div>
+      </article>
+      <article class="product shop-card animate-fadein" style="animation-delay:.20s;">
+        <div class="shop-icon">🛡️</div>
+        <div class="thumb"></div>
+        <div class="info">
+          <div class="shop-label">Accesso Fazione</div>
+          <div class="shop-price">100 Robux</div>
+          <a class="shop-btn animate-fadein" style="animation-delay:.24s;" href="#">Acquista</a>
+        </div>
+      </article>
+      <article class="product shop-card animate-fadein" style="animation-delay:.28s;">
+        <div class="shop-icon">🏢</div>
+        <div class="thumb"></div>
+        <div class="info">
+          <div class="shop-label">Azienda Gratis</div>
+          <div class="shop-price">150 Robux</div>
+          <a class="shop-btn animate-fadein" style="animation-delay:.32s;" href="#">Acquista</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Trailer / Media -->
+  <section id="trailer" class="container">
+    <div class="media-block">
+      <div class="video">
+        <h2 class="m0">Trailer Ufficiale</h2>
+        <p class="mt1" style="color:var(--muted)">Guarda un assaggio dell'azione su ROMA RP.</p>
+        <a class="trailer-img-link" href="https://www.youtube.com/watch?v=IQl-uX4y__c&t=8s" target="_blank" rel="noopener">
+          <img src="1d31448f-a33d-4567-9048-2c3c288d2a0b.png" alt="Guarda il Trailer ROMA RP V5" class="trailer-img" />
+        </a>
+      </div>
+      <aside class="aside">
+        <div class="community-card animate-fadein">
+          <h3 class="community-title">Unisciti alla Community</h3>
+          <div class="community-desc">Entra nel nostro Discord per regolamento, whitelist, ticket e novità.</div>
+          <div class="community-btns">
+            <a class="community-btn discord animate-fadein" style="animation-delay:.08s;" id="discord" href="#"><span class="community-icon">💬</span> Discord</a>
+            <a class="community-btn instagram animate-fadein" style="animation-delay:.16s;" href="#"><span class="community-icon">📸</span> Instagram</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta container">
+    <div class="wrap">
+      <h2>Pronto a pattugliare le strade di ROMA RP?</h2>
+      <div>
+        <a class="btn primary" href="#join">Inizia Ora</a>
+        <a class="btn outline" href="#roleplay">Scopri i Ruoli</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contatti -->
+  <section id="contatti" class="container">
+    <h2 class="m0">Contattaci</h2>
+    <p class="mt1" style="color:var(--muted)">Hai domande? Scrivici e ti risponderemo presto.</p>
+    <form class="form mt2" onsubmit="event.preventDefault(); alert('Messaggio inviato! (demo)')">
+      <div class="grid-2">
+        <input class="input" type="text" placeholder="Nome" required />
+        <input class="input" type="email" placeholder="Email" required />
+      </div>
+      <textarea class="textarea" placeholder="Messaggio" required></textarea>
+      <button class="btn primary" type="submit">Invia</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container grid-3">
+      <div>
+        <strong>ROMA RP</strong>
+        <p class="mt1">ER:LC su Roblox — RolePlay italiano.</p>
+      </div>
+      <div>
+        <p class="m0">Link utili</p>
+        <ul>
+          <li><a href="#roleplay">Regolamento</a></li>
+          <li><a href="#negozio">Negozio</a></li>
+          <li><a href="#contatti">Supporto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="m0">Social</p>
+        <ul>
+          <li><a href="#">Discord</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top:1rem; color:var(--muted)">© <span id="year"></span> ROMA RP. Tutti i diritti riservati.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
